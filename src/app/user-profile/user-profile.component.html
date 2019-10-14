@@ -1,13 +1,17 @@
-<div><img [src]=(user.photo) [alt]="nom" /></div>
+<div id="user">
+<div class="userpict">
+        <img [src]=(user.photo) [alt]="nom" />  
+    </div>
 
-<p>{{user.firstName}} {{user.lastname}}</p>
+<div class="userpict"><p>{{user.firstName}} {{user.lastname}}</p>
+    <p *ngIf = (age)>{{user.age}}</p>
+    <button (click)="age =! age">
+            Afficher/Masquer âge</button></div>
+</div>
+<div id="input">
+    <div id='quote'><span>Quote: </span>{{user.quote}}</div>
+    <div id='email'><span></span><input [(ngModel)]="user.quote" placeholder="Write here"/></div>
+</div>
 
-<p *ngIf = (age)>{{user.age}}</p>
-
-<div><span>Quote: </span>{{user.quote}}</div>
-
-<div><span></span><input [(ngModel)]="user.quote" placeholder="Write here"/></div>
 
 
-<button (click)="age =! age">
-Afficher/Masquer</button>
