@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Mail } from 'src/app/sign-up/mail';
+import { Champs } from '../champs';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,12 +7,18 @@ import { Mail } from 'src/app/sign-up/mail';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  mail: Mail = {
-    name: 'Thomas',
-    email: ''
-    
-  };
+  
+  model: Champs = new Champs();
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.model);
+  }
+  
   constructor() { }
+  
 
   ngOnInit() {
   }
