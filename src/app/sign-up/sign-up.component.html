@@ -5,7 +5,7 @@
       <input id="username" name="username" type="text" [(ngModel)]="model.username" #userRef="ngModel" required minlength="4" maxlength="25">
     </div>
     <div *ngIf="myForm.submitted && userRef.errors">
-      <span class="avert" *ngIf="userRef.errors.required">Le champ username doit dépasser 4 caractères</span>
+      <span class="avert" *ngIf="userRef.errors.required">Le champ username est requis</span>
       <span class="avert" *ngIf="userRef.errors.minlength">Le champ username doit dépasser 4 caractères</span>
       <span class="avert" *ngIf="userRef.errors.maxlength">Le champ username ne doit pas dépasser 25 caractères</span>
     </div>
